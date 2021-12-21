@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewData["Title"] - Bi'anlasam</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="JsLocalSearch.js" type="text/javascript"></script>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <link rel="shortcut icon" href="/icons/logo1.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/5b756dfa76.js" crossorigin="anonymous"></script>
+
+    <link href="normalize.css" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html;" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="/image/logo.png" alt="" class="logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Ilan" asp-action="Ilan">İlanlar</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <partial name="_LoginPartial" />
+
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container" style="font-size:0.75em">
+            &copy; 2021 - Bianlasam -
+            <a asp-area="" asp-controller="Kurumsal" asp-action="Hakkimizda">Hakkımızda  |  </a>
+            <a asp-area="" asp-controller="Kurumsal" asp-action="KullaniciSozlesmesi">Kullanıcı Sözleşmesi  |  </a>
+            <a asp-area="" asp-controller="Kurumsal" asp-action="Gizlilikpolitikasi">Gizlilik Politikası  |  </a>
+            <a asp-area="" asp-controller="Kurumsal" asp-action="Toplulukkurallari">Topluluk Kuralları  |  </a>
+            <a asp-area="" asp-controller="Kurumsal" asp-action="Iletisim">İletişim</a>
+
+
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

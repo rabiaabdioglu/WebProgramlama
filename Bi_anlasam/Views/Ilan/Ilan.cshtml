@@ -1,0 +1,203 @@
+﻿@model IEnumerable<Bi_anlasam.Models.Ilan>
+@{
+    ViewData["Title"] = "Ilan";
+}
+<div id="haftanin-ogrencileri">
+    <span> Haftanın en çok ders veren öğrencileri<br></span>
+
+    <div id="haftanin-ogrencileri-profilleri">
+        <ul>
+            <!--kullanicilarin fotoğraflari olacak-->
+            <!---buraya gelecek olan kullanıcılar veritabanından 1-2-3-4 .haftalar olarak gelecek son 7 gün değil
+            her pazartesi değişmeli-->
+            <li><img src="/icons/profile_picture.png" alt=""><p>Ad Soyad</p></li>
+            <li><img src="/icons/profile_picture.png" alt=""><p>Ad Soyad</p></li>
+            <li><img src="/icons/profile_picture.png" alt=""><p>Ad Soyad</p></li>
+            <li><img src="/icons/profile_picture.png" alt=""><p>Ad Soyad</p></li>
+            <li><img src="/icons/profile_picture.png" alt=""><p>Ad Soyad</p></li>
+        </ul>
+        <ul>
+            <li><img src="/icons/profile_picture.png" alt=""><p>Ad Soyad</p></li>
+            <li><img src="/icons/profile_picture.png" alt=""><p>Ad Soyad</p></li>
+            <li><img src="/icons/profile_picture.png" alt=""><p>Ad Soyad</p></li>
+            <li><img src="/icons/profile_picture.png" alt=""><p>Ad Soyad</p></li>
+
+        </ul>
+    </div>
+
+</div></center>
+<div class="ilan-title">
+    <a>İLANLAR</a>
+</div>
+
+<div id="ilanlar">
+    <!--ARAMA BUTONU-->
+    <form class="arama" style="margin:20px auto;">
+        <!--aramaya girilen kelimelerde sağ sol boşluk olmama  durumuna bak   veritabanı için-->
+        <input type="text" name="alan" id="" placeholder="   Alan..." onclick="this.placeholder='';">
+        <input type="text" name="ders" id="" placeholder="   Ders..." onclick="this.placeholder='';">
+
+        <button type="submit" style="height: 50px; width: 50px; top: 15px;">
+            <img src="/icons/search_icon.png" style="height:20px" alt="">
+        </button>
+    </form>
+    <br /><br /><br />
+
+    <div id="filtreler" style=" margin-top:10px;">
+        <a>     <i class="fas fa-filter" data-toggle="modal" type="button" data-target="#Modal2"> Filtre</i></a>
+
+        <div class="modal" id="Modal2">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-tittle">Filtrele</h4>
+
+                        <form action="/" method="post">
+                            <div class="modal-body">
+                                <nav id="filtre-ilan">
+                                    <!--FİLTRELER-->
+
+
+                                    <form id="filtre">
+                                        <br>
+                                        <!--Fiyat-->
+                                        <!--proje bitince buraya alanların zorluk seviyesine göre kıstas belirlenecek-->
+                                        <nav id="filtre-fiyat">
+                                            Fiyat:
+                                            <br>
+                                            <br>
+                                            <input type="text" name="ders" id="" value="  max" onclick="this.value='';">  -
+                                            <input type="text" name="ders" id="" value="  max" onclick="this.value='';">
+                                            <br><br>
+                                        </nav>
+
+                                        <!--Alan:-->
+                                        <nav id="filtre-alan">
+                                            Alan:
+                                            <br>
+                                            <br>
+                                            <input type="text" name="ders" id="" value="  Mimarlık,Ekonomi..." onclick="this.value='';">
+
+                                            <br><br>
+                                        </nav>
+
+                                        <!--Ders:-->
+                                        <nav id="filtre-ders">
+                                            Ders:
+                                            <br>
+                                            <br>
+                                            <input type="text" name="ders" id="" value="  Anatomi,İntegral..." onclick="this.value='';">
+
+
+                                        </nav>   <!--Konum-->
+                                        <!--buradaki şehirler veritabanından gelecek-->
+                                        <nav id="filtre-konum">
+                                            Konum:
+                                            <br><br>
+
+                                            <select>
+                                                <option selected>İl</option>
+                                                <option>Trabzon</option>
+                                                <option>Sivas</option>
+                                                <option>Konya</option>
+                                                <option>İstanbul</option>
+                                            </select> /
+
+                                            <select>
+                                                <option selected>İlçe</option>
+                                                <option>Trabzon</option>
+                                                <option>Sivas</option>
+                                                <option>Konya</option>
+                                                <option>İstanbul</option>
+                                            </select>
+
+
+                                            <br><br>
+                                        </nav>
+
+                                        <br><br>
+                                        <!--Şuanki Filtreler:-->
+                                        <nav id="filtre-uygula-temizle">
+
+                                            <button type="reset">Temizle</button><br>
+
+                                        </nav>
+                                        <nav id="filtre-uygula-temizle">
+                                            <button type="submit">Uygula</button>
+                                        </nav>
+                                    </form>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a>  <i class="fas fa-sort-amount-down">Önce en düşük fiyat</i>  </a>
+
+        <a> <i class="fas fa-sort-amount-up"> Önce en yüksek fiyat  </i> </a>
+
+        <a>  <i class="fas fa-sort-amount-up"> Önce en yeni  </i>     </a>
+
+        <a>  <i class="fas fa-sort-amount-down"> Önce en eski </i>    </a>
+
+    </div>
+    <div id="ilanlar-kapsayici">
+
+
+        @foreach (var item in Model)
+        {
+
+
+            <div id="ilan-icerik">
+                <!--kullanıcının profil fotoğrafı -->
+                <nav  asp-action="ProfileGit" asp-route-id="@item.Kullanici.KullaniciId" id="profil-pp"><img src="/icons/profile_picture.png" alt=""></nav>
+                <!--ilan veren kullanıcının adı soyadı ve diğer ilan bilgileri-->
+                <nav id="ilan-bilgileri">
+                    <!--ilan bilgilerini kapsayan div-->
+
+                    <div id="ilan">
+                        <!--1.satır-->
+                        <nav style="width:40%;">
+                            <a asp-controller="Profil"  asp-action="Profil" asp-route-id="@item.Kullanici.KullaniciId">
+                                <span>
+                                    @Html.DisplayFor(modelItem => item.Kullanici.TamAd)
+                                </span>
+                            </a>
+                        </nav><!--1.satırın içindeki 1.sütun-->
+
+                        <nav style="float:right;  display: flex; flex-direction:row;  width:70%;">
+                            <!--1.satırın içindeki 2.sütun-->
+                            <span style="width:500px;">
+                                @Html.DisplayFor(modelItem => item.Ders.Alan.AlanAd)--
+                                @Html.DisplayFor(modelItem => item.Ders.DersAd)
+
+                            </span>
+                            <a  class="teklif-buton" asp-action="SecilenIlan" asp-route-id="@item.IlanId">   
+                            <i type="button" class="fas fa-money-bill-alt"> @Html.DisplayFor(modelItem => item.Fiyat)</i> 
+                            <br />   <br />Teklif ver</a>
+
+
+                        </nav>
+                    </div>
+
+                    <div id="konum">
+                        <!--2.satır-->
+                        <!--ilan veren kullanıcının ders verebileceği konum alanı-->
+                        <i id="konum">
+                            <img src="/icons/location.png" alt="">
+                            @Html.DisplayFor(modelItem => item.Ilce.IlceAd)
+                        </i>
+
+                    </div>
+                </nav>
+
+            </div>
+        }
+
+    </div>
+    <!--- ilanların alt kısmına sayfa numaraları üst kısmına sıralama açılır menüsü gelecek-->
+    <!-- İLANLARIN GELECEĞİ YER-->
+    </nav><!---yukarı git eklenebilir-->
+</div>

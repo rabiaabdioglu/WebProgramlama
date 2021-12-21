@@ -1,0 +1,180 @@
+﻿@model Bi_anlasam.Models.Ilan
+
+@{
+    ViewData["Title"] = "SecilenIlan";
+}
+<div id="secilen-ilan">
+    <div id="hemen-ilan-ver">
+        <img src="/image/hemen-kendi-ilanini-ver.png">
+        <br>
+        <!--İlan oluşturmaya yönlendirir-->
+       
+        
+        <button id="secilen-ilan-ders-al" data-toggle="modal" type="button" data-target="#Modal1">Ders Al</button>
+        @Html.Partial("_DersAlPopup")
+    </div>
+
+
+    <nav id="ana-ilan">
+        <div id="ana-ilan-satir-1">
+            <nav id="satir-1-sutun-1">
+                <!--Profil fotoğrafı kısmı-->
+                <img src="/icons/profile_picture.png" style="width: 35%; margin-top: 15%; align-self: center;">
+            </nav>
+
+            <nav id="satir-1-sutun-2">
+                <!--Ad soyad ve puan  kısmı-->
+                <a>@Html.DisplayFor(model => model.Kullanici.TamAd)</a>
+                <br>
+                <i style="font-size:0.7rem; float: left;">40   değerlendirme</i>
+            </nav>
+
+            <nav id="satir-1-sutun-3">
+                <!--İlan bilgileri kısmı-->
+                <a style="font-size:1.2rem; ">
+                    @Html.DisplayFor(model => model.Ders.Alan.AlanAd)
+                    <br />
+                    @Html.DisplayFor(model => model.Ders.DersAd)
+                </a>
+                <i style="float: right; margin-right:20px; font-size:0.7rem;">5 saat önce</i>
+                <br>
+                <br>
+                <!--Açıklama kısmı-->
+                <a style="font-size: 0.9em;">
+                    @Html.DisplayFor(model => model.Aciklama)
+
+                </a>
+            </nav>
+        </div>
+
+        <div id="ana-ilan-satir-2">
+            <!-- konum ve fiyat kısmı-->
+            <i style="float: left;">
+                <img src="/icons/location.png" style="width:7%; ">  <br />
+                @Html.DisplayFor(model => model.Ilce.Sehir.SehirAd) /
+                @Html.DisplayFor(model => model.Ilce.IlceAd)
+
+
+            </i>
+            <nav style="float:right;">
+                <a style="float:right; margin-right:7%; width:100% ;font-size:0.75em ">
+                    <i type="button" class="fas fa-money-bill-alt"> </i>  @Html.DisplayFor(model => model.Fiyat) ₺/sa
+                </a>
+                <br>
+
+
+                <a  class="teklif-buton" data-toggle="modal" data-target="#Modal3">   Teklif ver</a>
+            </nav>
+            <div class="modal" id="Modal3">
+                <div class="modal-dialog" style="width: 20%; display: flex; ">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <form action="/" method="post">
+                                <div class="modal-body">
+                                    <div class="title">
+                                        <h6>Teklif Giriniz </h6> <br />
+
+                                    </div>
+                                    <div class="content">
+                                        <input type="text" style=" margin: 10px 10px auto 10%;">  <p>
+
+                                            <button class="teklif-buton" type="submit" name="ders" id="filtre-uygula-temizle" style=" margin: 10%; width: 90%;">
+                                                <i class="fas fa-money-bill-alt" type="button"></i> Teklif ver
+                                            </button>
+                                        </p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </nav>
+    <!--bu kısımda sayfa numaları olacak-->
+
+
+
+    <nav id="teklifler">
+        <!--- tekliflerin tümünü kapsayan -->
+        <center>
+            <!--her teklif altalta gelecek-->
+            <nav id="teklif">
+
+                <nav id="satir-1-sutun-1">
+                    <!--Profil fotoğrafı kısmı-->
+                    <img src="/icons/profile_picture.png" style="float: right; width:40%; margin-top:20px;">
+                </nav>
+
+                <nav id="satir-1-sutun-2">
+                    <!--Ad soyad ve puan  kısmı-->
+                    <a>Ad Soyad</a> &nbsp&nbsp&nbsp<i style="font-size:0.7rem;  ">40   değerlendirme</i>
+                    <br>Üniversite  / Bölüm
+                </nav>
+
+                <nav id="satir-1-sutun-3">
+                    <!--Teklif Kısmı-->
+                    <input class="teklif-buton" type="button" value="10 TL/sa" style="width:50%; height:30%; margin:20% 20% auto auto;">
+                </nav>
+
+
+            </nav>
+        </center>
+    </nav>
+
+    <br>
+    <br>
+    <br>
+    <nav id="benzer-ilan">
+        <a style="float: left; margin-left:20%; font-size:1.6rem; font-family:Verdana, Geneva, Tahoma, sans-serif;">Bu ilana benzer ilanlar</a>
+        <center>
+            <div id="buna-benzer-ilan">
+
+                <nav class="benzer-ilan">
+                    <img src="/icons/profile_picture.png" style="width:40%; margin-top: 5px;" alt="">
+                    <br>
+                    Ad Soyad
+                    <br>
+                    Alan konum
+                    <br>
+                    <input class="teklif-buton" type="button" value="10 TL/sa" style="width:50%; height:20%;  margin-top:10px; margin-right:25%;">
+
+                </nav>   <nav class="benzer-ilan">
+                    <img src="/icons/profile_picture.png" style="width:40%; margin-top: 5px;" alt="">
+                    <br>
+                    Ad Soyad
+                    <br>
+                    Alan konum
+                    <br>
+                    <input class="teklif-buton" type="button" value="10 TL/sa" style="width:50%; height:20%;  margin-top:10px; margin-right:25%;">
+
+                </nav>   <nav class="benzer-ilan">
+                    <img src="/icons/profile_picture.png" style="width:40%; margin-top: 5px;" alt="">
+                    <br>
+                    Ad Soyad
+                    <br>
+                    Alan konum
+                    <br>
+                    <input class="teklif-buton" type="button" value="10 TL/sa" style="width:50%; height:20%;  margin-top:10px; margin-right:25%;">
+
+                </nav>   <nav class="benzer-ilan">
+                    <img src="/icons/profile_picture.png" style="width:40%; margin-top: 5px;" alt="">
+                    <br>
+                    Ad Soyad
+                    <br>
+                    Alan konum
+                    <br>
+                    <input class="teklif-buton"  type="button" value="10 TL/sa" style="width:50%; height:20%;  margin-top:10px; margin-right:25%;">
+
+                </nav>
+
+            </div>
+    </nav>
+    </center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+

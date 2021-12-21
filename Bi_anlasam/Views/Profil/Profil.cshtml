@@ -1,0 +1,119 @@
+﻿@model Bi_anlasam.Models.Kullanici
+
+@{
+    ViewData["Title"] = "Profil";
+}
+<center>
+    <div id="profil">
+        <div id="kullanici-bilgileri">
+
+            <div id="kb-satir-1">
+                <div id="satir-1-sutun-1">
+                    <!--Profil fotoğrafı kısmı-->
+                    <img src="/icons/profile_picture.png" style="float:left; margin-left:40%; width:60%; margin-top: 20px;">
+
+                </div>
+
+                <div id="satir-1-sutun-2">
+                    <!--Ad soyad ve puan  kısmı-->
+                    <a>@Html.DisplayFor(model => model.TamAd)  <img src="/icons/approved.png" style="width:3%;" alt=""></a>
+                    <br>
+                    <i style="font-size:0.7rem; float: left;">
+                        <img src="/icons/45-out-of-5-stars-png-15.png" alt="" style="width:12%;">
+                        (40   değerlendirme)
+                    </i>
+
+                    <br>
+                    <br>
+
+                    <a style="font-size:0.8rem; float:left;">
+                        @Html.DisplayFor(model => model.Universite.UniversiteAd) <br>
+                        @Html.DisplayFor(model => model.BolumAdi)
+                    </a>
+                </div>
+
+                <div id="satir-1-sutun-3">
+                   
+                    <img src="/icons/dot.png" style="width:40%;" alt="">
+
+                    <i style="float:right; width:120%; margin-top:120%; font-size:90%;">
+                        <img src="/icons/location.png" style="width:20%;">
+
+                        @Html.DisplayFor(model => model.Sehir.SehirAd)
+                    </i>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div id="profil-alt">
+
+            <div id="yan-bilgi">
+                @Html.DisplayFor(model => model.Aciklama)
+
+            </div>
+            <div id="profil-ilanlari">
+                <center>
+                    <div id="p-ilan">
+                        <!--kullanıcının profil fotoğrafı -->
+                        <div id="satir-1-sutun-1">
+                            <img src="/icons/profile_picture.png" style="width:50%; float: left; margin-left: 20%;" alt="">
+                        </div>
+
+                        <div id="satir-1-sutun-2" style="width:80%; float: left;">
+                            <!--ilan bilgilerini kapsayan div-->
+
+                            <span style="font-size:1.1rem; margin-right:10%; ">Ad Soyad</span>
+                            &nbsp  &nbsp  &nbsp
+                            <span style=" margin-right:10%; "> Dersin ve Konunun Adı</span>
+                            <input class="teklif-buton" type="button" value="10 TL/sa" style="width:20%; float:right; margin-right:5px;">
+                        </div>
+
+
+                    </div>
+
+            </div>
+
+
+
+
+
+        </div>
+        
+    @*<div id="p-degerlendirme">
+            <span style="font-size:1.5rem; "> Değerlendirmeler</span>
+            <br>
+            <img src="/icons/45-out-of-5-stars-png-15.png" style="width:13%; margin-right:3%;" alt="">
+            <a>40 değerlendirme &nbsp | &nbsp 10 yorum</a>
+            <br>
+            <br>
+
+            <div id="p-yorumlar">
+
+                <div>
+                    Çok iyi bir anlatıcı. Kendisine çok teşekkür ederim  ÖRNEK YORUM
+                    <br>
+                    <img src="/icons/45-out-of-5-stars-png-15.png" alt="">
+
+                    <a style="float:right;">Ad soyad</a>
+                </div>
+
+
+            </div>
+        </div>*@
+
+
+</center>
+
+
+
+
+</div>
+
+
+
+
+</center>
+

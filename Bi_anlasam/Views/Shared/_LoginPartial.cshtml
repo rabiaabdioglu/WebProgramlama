@@ -1,0 +1,28 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<ul class="navbar-nav">
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark"  title="Manage">Hello @User.Identity.Name!</a>
+        </li>
+        <li class="nav-item">
+            <ul>
+                <a class="btn btn-primary" asp-area="" asp-controller="KayitGiris" asp-action="CikisYap">Çıkış Yap Ol</a>
+            </ul>
+        </li>
+    }
+    else
+    {
+        <ul style="display:flex; ">
+            <li style="margin: 1%;">
+                <a class="btn btn-primary" asp-area="" asp-controller="KayitGiris" asp-action="KayitOl">Kayıt Ol</a>
+
+            </li>
+            <li style="margin: 1%;"> <a class="btn btn-primary" asp-area="" asp-controller="KayitGiris" asp-action="GirisYap"> Giriş Yap </a></li>
+        </ul>
+
+    }
+</ul>

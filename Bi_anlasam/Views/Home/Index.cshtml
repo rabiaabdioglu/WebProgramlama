@@ -1,0 +1,70 @@
+﻿@model Bi_anlasam.Models.Sehir
+@{
+    ViewData["Title"] = "Anasayfa";
+}     
+  <div id="header-bg"></div>
+
+
+<div class="header">
+
+    <span>Anlamadığın Her Konuda  Arkadaşların Yanında</span>
+
+    <div class="dersal-ver" role="group" aria-label="Basic example">
+
+        <button type="button" asp-area="" asp-controller="Ilan" asp-action="Ilan" class="button btn btn-secondary dersal-ver">Ders Ver</button>
+        <button class="button btn btn-secondary dersal-ver" data-toggle="modal" type="button" data-target="#Modal1">Ders Al</button>
+        @Html.Partial("_DersAlPopup") </div>
+
+
+</div>
+
+
+
+<p id="orta_yazi">Yüzlerce Alandan  İlanlar Senin İçin Burada</p>
+
+<!--Arama Kısmı-->
+<form class="arama" style="text-align:center; padding:15px;">
+    <input type="text" name="ders" id="" value="   Alan..." onclick="this.value=''; color: black;">
+    @*@foreach (var alan in Model)
+    {
+        <h2>@Html.DisplayFor(modelItem=> alan.AlanAd)  </h2> <br />
+
+
+    }*@
+
+    <input type="text" name="konu" id="" value="   Ders..." onclick="this.value='';">
+    <button type="submit" style="height: 50px; width: 50px; top: 15px;">
+        <img src="/icons/search_icon.png" style="height:20px" alt="">
+    </button>
+</form>
+
+
+
+<!--Tanıtım için var olan alanların iconları filtrelenmiş ilanlara yönlendirir-->
+
+<section id="bolumlerin-iconlari">
+    <ul>
+        
+        <li><img src="/60-60/bilgisayar.png" alt=""><p>Bilgisayar</p></li>
+        <li><img src="/60-60/beslenme.png" alt=""><p>Beslenme</p></li>
+        <li><img src="/60-60/biyoloji.png" alt=""><p>Biyoloji</p></li>
+        <li><img src="/60-60/elektrik.png" alt=""><p>Elektrik</p></li>
+        <li><img src="/60-60/finans.png" alt=""><p>Finans</p></li>
+        <li><img src="/60-60/fizik.png" alt=""><p>Fizik</p></li>
+        <li><img src="/60-60/hukuk.png" alt=""><p>Hukuk</p></li>
+
+        <li><img src="/60-60/ingilizce.png" alt=""><p>Yabancı Dil</p></li>
+        <li><img src="/60-60/kimya.png" alt=""><p>Kimya</p></li>
+        <li><img src="/60-60/makine (2).png" alt=""><p>Makine</p></li>
+        <li><img src="/60-60/psikoloji.png" alt=""><p>Psikoloji</p></li>
+        <li><img src="/60-60/saglik.png" alt=""><p>Bilgisayar</p></li>
+        <li><img src="/60-60/tarih.png" alt=""><p>Tarih</p></li>
+        <li><img src="/60-60/elektrik.png" alt=""><p>Elektrik</p></li>
+    </ul>
+</section>
+
+<!-- görsellik için -->
+<div id="calisan-ogrenciler">
+    <img src="/image/calisan-ogrenciler.png" alt="">
+</div>
+
