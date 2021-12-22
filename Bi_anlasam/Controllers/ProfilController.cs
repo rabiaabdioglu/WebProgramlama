@@ -22,7 +22,12 @@ namespace Bi_anlasam.Controllers
 
             return View(profil);
         }
-     
+        public IActionResult Create()
+        {
+
+            return View();
+        }
+
         public async Task<IActionResult> Profil(int? id)
         {
             if (id == null)

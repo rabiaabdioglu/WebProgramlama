@@ -1,0 +1,41 @@
+﻿
+
+@model List<Teklif>
+
+@foreach (var item in Model)
+{
+    if (Model != null)
+    {
+        <nav id="teklifler">
+            <!--- tekliflerin tümünü kapsayan -->
+            <center>
+                <!--her teklif altalta gelecek-->
+                <nav id="teklif">
+
+                    <nav id="satir-1-sutun-1">
+                        <!--Profil fotoğrafı kısmı-->
+                        <img src="/icons/profile_picture.png" style="float: right; width:40%; margin-top:20px;">
+                    </nav>
+
+                    <nav id="satir-1-sutun-2">
+                        <!--Ad soyad ve puan  kısmı-->
+                        <a>Ad Soyad</a> &nbsp&nbsp&nbsp<i style="font-size:0.7rem;  ">40   değerlendirme</i>
+                        <br>Üniversite  / Bölüm
+                    </nav>
+
+                    <nav id="satir-1-sutun-3">
+                        <!--Teklif Kısmı-->
+                        <input class="teklif-buton" type="button" value="10 TL/sa" style="width:50%; height:30%; margin:20% 20% auto auto;">
+                    </nav>
+
+
+                </nav>
+            </center>
+        </nav>}
+    else
+    { <nav id="teklifler">
+            <a>Teklif yok.</a>
+        </nav>
+
+    }
+}

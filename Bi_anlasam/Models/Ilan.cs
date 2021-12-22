@@ -45,6 +45,8 @@ namespace Bi_anlasam.Models
 
         public string Aciklama { get; set; }
         public bool IlanDurum { get; set; }
+        public ICollection<Teklif> Teklif { get; set; }
+
 
     }
 }

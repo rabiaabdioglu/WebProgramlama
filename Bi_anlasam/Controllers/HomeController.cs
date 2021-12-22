@@ -14,12 +14,14 @@ namespace Bi_anlasam.Controllers
     {
         
 
-        private readonly BianlasamDbContext _context;
+        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(BianlasamDbContext context)
+        public HomeController(ILogger<HomeController> logger)
         {
-            _context = context;
+            _logger = logger;
         }
+
+
 
 
         public IActionResult Index()

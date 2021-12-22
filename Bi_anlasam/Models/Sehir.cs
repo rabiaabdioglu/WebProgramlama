@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Bi_anlasam.Models
 {
@@ -12,5 +13,7 @@ namespace Bi_anlasam.Models
         [StringLength(80)]
 
         public string SehirAd { get; set; }
+        public ICollection<Ilce> Ilce { get; set; }
+
     }
 }

@@ -40,9 +40,6 @@ namespace Bi_anlasam.Models
         public DateTime KayitTarihi { get; set; }
 
 
-      
-
-
    
         public int Telefon { get; set; }
         public int KullaniciPuani { get; set; }
@@ -54,14 +51,13 @@ namespace Bi_anlasam.Models
 
         //ilişkiler
         public Universite Universite { get; set; }
-        [ForeignKey("UniversiteId")]
 
         public int UniversiteId { get; set; }
 
         public string BolumAdi { get; set; }
 
         public Sehir Sehir { get; set; }  
-        [ForeignKey("SehirId")]
+    
 
         public int SehirId { get; set; }
 
