@@ -5,7 +5,7 @@
             <div class="modal-header">
                 <h4 class="modal-tittle">İLAN OLUŞTUR</h4>
 
-                <form action="/" method="post">
+                <form asp-action="IlanOlustur" asp-controller="Ilan" >
                     <div class="modal-body">
                         <div class="content">
                             <ul>
@@ -18,7 +18,9 @@
                             </ul>
                             <ul>
                                 <li>
-
+                                    <select class="form-control" id="il" name="il" autocomplete="off">
+                                        <option value="0">İl Seçiniz</option>
+                                    </select>
 
                                 </li>
                                 <li>

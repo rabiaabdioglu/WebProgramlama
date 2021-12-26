@@ -1,7 +1,10 @@
-﻿@{
-    @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor ;
+﻿@{@using Microsoft.AspNetCore.Identity;
+
+@using Microsoft.AspNetCore.Http;
+
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor ;
 @using Microsoft.AspNetCore.Mvc;
-    }
+}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,8 +44,14 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Ilan" asp-action="Ilan">İlanlar</a>
                         </li>
-                    </ul>
 
+                        @if (HttpContextAccessor.HttpContext.Session.GetString("IsAdmin") =="True")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Admin</a>
+                            </li>
+                        }
+                    </ul>
                 </div>
 
                 <partial name="_LoginPartial" />

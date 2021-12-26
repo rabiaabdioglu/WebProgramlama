@@ -53,7 +53,7 @@ namespace Bi_anlasam.Controllers
             {
 
                 HttpContext.Session.SetInt32("id", kullanici.KullaniciId);
-                HttpContext.Session.SetString("KullaniciAdi", kullanici.Adi + " " + kullanici.Soyadi);
+                HttpContext.Session.SetString("IsAdmin", kullanici.IsAdmin.ToString());
                 return Redirect("/Home/Index");
             }
 

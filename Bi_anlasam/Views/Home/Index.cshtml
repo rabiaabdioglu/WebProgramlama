@@ -1,5 +1,4 @@
-﻿@model Bi_anlasam.Models.Sehir
-@{
+﻿@{
 @using Microsoft.AspNetCore.Identity;
 
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
@@ -14,11 +13,11 @@ ViewData["Title"] = "Anasayfa";
 
     <span>Anlamadığın Her Konuda  Arkadaşların Yanında</span>
 
-    <div class="dersal-ver" role="group" aria-label="Basic example">
+    <div class="dersal-ver"  aria-label="Basic example">
 
-        <button type="button" asp-area="" asp-controller="Ilan" asp-action="Index" class="button btn btn-secondary dersal-ver">Ders Ver</button>
+        <button  asp-area="" asp-controller="Ilan" asp-action="Ilan" type="button" class ="button btn btn-secondary dersal-ver">Ders Ver</button>
         @if (HttpContextAccessor.HttpContext.Session.GetInt32("id") == null)
-        {<button class="button btn btn-secondary dersal-ver" asp-area="" asp-controller="KayitGiris" asp-action="Index">Ders Al</button>
+        {<button class="button btn btn-secondary dersal-ver" asp-area="" asp-controller="KayitGiris" asp-action="KayitOl">Ders Al</button>
 
         }
         else
@@ -37,8 +36,8 @@ ViewData["Title"] = "Anasayfa";
 <p id="orta_yazi">Yüzlerce Alandan  İlanlar Senin İçin Burada</p>
 
 <!--Arama Kısmı-->
-<form class="arama" style="text-align:center; padding:15px;">
-    <input type="text" name="ders" id="" value="   Alan..." onclick="this.value=''; color: black;">
+<form  asp-action="IlanAra" asp-controller="Ilan"  method="post" class="arama" style="text-align:center; padding:15px;">
+    <input   type="text" name="alan"  value="   Alan..." onclick="this.value=''; color: black;">
     @*@foreach (var alan in Model)
         {
             <h2>@Html.DisplayFor(modelItem=> alan.AlanAd)  </h2> <br />
@@ -46,7 +45,7 @@ ViewData["Title"] = "Anasayfa";
 
         }*@
 
-    <input type="text" name="konu" id="" value="   Ders..." onclick="this.value='';">
+    <input type="text" name="ders"  value="   Ders..." onclick="this.value='';">
     <button type="submit" style="height: 50px; width: 50px; top: 15px;">
         <img src="/icons/search_icon.png" style="height:20px" alt="">
     </button>
